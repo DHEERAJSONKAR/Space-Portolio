@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
+
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -34,11 +35,11 @@ const Navbar = () => {
           className="h-auto w-auto flex flex-row items-center"
         >
           <Image
-            src="/NavLogo.png"
-            alt="logo"
-            width={70}
-            height={70}
-            className="cursor-pointer hover:animate-slowspin"
+            src="/dkphoto.jpg"
+            alt="Dheeraj Sonkar"
+            width={50}
+            height={50}
+            className="cursor-pointer rounded-full border-2 border-purple-500 hover:border-cyan-500 transition-all"
           />
 
           <span className="font-bold ml-[10px] hidden md:block text-gray-300">

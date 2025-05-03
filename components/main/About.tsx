@@ -7,6 +7,7 @@ import { FaGraduationCap, FaBriefcase, FaRegLightbulb, FaPhone, FaEnvelope, FaMa
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
 import { Skill_data } from "@/constants"; // Import the Skill_data from constants
 import dkphoto from "@/public/dkphoto.jpg"
+import TypewriterText from "@/components/animations/TypewriterText";
 
 const About = () => {
   // Define slideInFromBottom locally
@@ -52,14 +53,42 @@ const About = () => {
             variants={slideInFromLeft(0.5)}
             className="flex flex-col items-center md:items-start"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 mb-6 rounded-2xl overflow-hidden border-4 border-purple-500/50 shadow-xl shadow-purple-500/30">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 mb-6 rounded-2xl overflow-hidden border-4 border-purple-500/50 shadow-xl shadow-purple-500/30 group">
               <Image
                 src={dkphoto}
                 alt="Dheeraj Sonkar"
                 width={320}
                 height={320}
-                className="w-full h-full object-cover hover:scale-105 transition-all duration-500"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
               />
+              
+              {/* Enhanced animated name with visual effects */}
+              <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Shimmer effect background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent shimmer"></div>
+                
+                {/* Typewriter text with enhanced styling */}
+                <div className="relative z-10 py-3">
+                  <TypewriterText 
+                    text="Dheeraj Sonkar" 
+                    className="text-2xl font-bold"
+                    speed={100}
+                    delayBeforeDelete={3000}
+                    delayBeforeType={800}
+                    gradientColors="from-purple-400 via-pink-500 to-blue-400"
+                  />
+                  
+                  {/* Subtitle that appears with a slight delay */}
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5, duration: 1 }}
+                    className="text-sm text-gray-300 mt-1 italic"
+                  >
+                    Fullstack Developer
+                  </motion.div>
+                </div>
+              </div>
             </div>
             
             <div className="bg-[#0300145e] border border-[#7042f861] p-6 rounded-xl w-full mt-6">
