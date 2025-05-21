@@ -26,59 +26,61 @@ const Projects = () => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
-  // Extended project data with more details and links
+  // New project data with the provided links
   const projects: Project[] = [
     {
       id: 1,
-      src: "/NextWebsite.png",
-      title: "Modern Next.js Portfolio",
-      description: "A responsive portfolio website built with Next.js and TailwindCSS featuring smooth animations and a space theme.",
-      technologies: ["Next.js", "React", "TailwindCSS", "Framer Motion"],
-      github: "https://github.com/DHEERAJSONKAR/portfolio",
-      demo: "https://portfolio-site.vercel.app"
+      src: "/kodebase.png",
+      title: "KodeBase",
+      description: "A comprehensive coding platform with user authentication and collaborative features for developers.",
+      technologies: ["Next.js", "React", "TailwindCSS", "Authentication"],
+      demo: "https://kodebase.vercel.app/login",
+      images: ["/kodebase1.jpg", "/kodebase2.jpg", "/kodebase3.jpg"]
     },
     {
       id: 2,
-      src: "/CardImage.png",
-      title: "Interactive Website Cards",
-      description: "A collection of interactive card components with hover effects and animations, built for modern web applications.",
-      technologies: ["React", "CSS", "JavaScript", "Styled Components"],
-      github: "https://github.com/DHEERAJSONKAR/interactive-cards"
+      src: "/gym.png",
+      title: "Fitness Website",
+      description: "A modern gym and fitness website with membership plans, workout schedules and trainer profiles.",
+      technologies: ["React", "CSS", "JavaScript", "Responsive Design"],
+      demo: "https://dheeraj-gym.vercel.app/",
+      images: ["/gym1.jpg", "/gym2.jpg", "/gym3.jpg"]
     },
     {
       id: 3,
-      src: "/SpaceWebsite.png",
-      title: "Space Themed Website",
-      description: "An immersive space-themed website with 3D animations and interactive elements using Three.js and WebGL.",
-      technologies: ["Three.js", "React", "WebGL", "GSAP"],
-      github: "https://github.com/DHEERAJSONKAR/space-website",
-      demo: "https://space-explorer.vercel.app"
+      src: "/ai.png",
+      title: "Shipra AI",
+      description: "An AI-powered platform offering intelligent solutions for various tasks and queries.",
+      technologies: ["AI", "React", "API Integration", "UI/UX"],
+      demo: "https://shipra-ai.vercel.app/",
+      images: ["/ai1.jpg", "/ai2.jpg", "/ai3.jpg"]
     },
     {
       id: 4,
-      src: "/ecommerce.jpg",
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with product listings, cart functionality, user authentication, and payment integration.",
-      technologies: ["Next.js", "MongoDB", "Stripe", "Redux"],
-      github: "https://github.com/DHEERAJSONKAR/ecommerce-platform",
-      demo: "https://shopify-clone.vercel.app"
+      src: "/tictac.png",
+      title: "Tic-Tac-Toe Game",
+      description: "A classic Tic-Tac-Toe game built with modern web technologies for an engaging user experience.",
+      technologies: ["JavaScript", "HTML", "CSS", "Game Logic"],
+      demo: "https://tic-tac-sooty.vercel.app/",
+      images: ["/tictac1.jpg", "/tictac2.jpg", "/tictac3.jpg"]
     },
     {
       id: 5,
-      src: "/chatapp.png",
-      title: "Real-time Chat Application",
-      description: "A real-time messaging application with private chats, group conversations, and media sharing capabilities.",
-      technologies: ["Socket.io", "React", "Node.js", "Express", "MongoDB"],
-      github: "https://github.com/DHEERAJSONKAR/chat-application"
+      src: "/sales.png",
+      title: "SalesForce Clone",
+      description: "A comprehensive CRM platform with sales tracking, customer management, and reporting features.",
+      technologies: ["React", "CRM", "Dashboard", "Data Visualization"],
+      demo: "https://salesfource.vercel.app/",
+      images: ["/sales1.jpg", "/sales2.jpg", "/sales3.jpg"]
     },
     {
       id: 6,
-      src: "/dashboard.png",
-      title: "Admin Dashboard",
-      description: "A comprehensive admin dashboard with data visualization, user management, and analytics features.",
-      technologies: ["React", "Material UI", "Chart.js", "Firebase"],
-      github: "https://github.com/DHEERAJSONKAR/admin-dashboard",
-      demo: "https://admin-panel-demo.vercel.app"
+      src: "/card.png",
+      title: "Card Hover Effects",
+      description: "A collection of interactive card components with innovative hover effects and animations.",
+      technologies: ["CSS3", "HTML5", "JavaScript", "Animation"],
+      demo: "https://cardhover-flax.vercel.app/",
+      images: ["/card1.jpg", "/card2.jpg", "/card3.jpg"]
     }
   ];
 
@@ -377,7 +379,7 @@ const Projects = () => {
                           High performance and optimization
                         </li>
                         <li className="animate-fade-in" style={{animationDelay: '400ms'}}>
-                          SEO friendly implementation
+                          User-friendly interface and navigation
                         </li>
                       </ul>
                     </div>
