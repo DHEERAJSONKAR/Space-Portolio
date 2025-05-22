@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import ProjectCard from "../sub/ProjectCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
@@ -27,7 +27,7 @@ const Projects = () => {
   const [touchEnd, setTouchEnd] = useState(0);
 
   // New project data with the provided links
-  const projects: Project[] = [
+  const projects = useMemo(() => [
     {
       id: 1,
       src: "/kodebase.png",
@@ -82,7 +82,7 @@ const Projects = () => {
       demo: "https://cardhover-flax.vercel.app/",
       images: ["/card1.jpg", "/card2.jpg", "/card3.jpg"]
     }
-  ];
+  ], []);
 
   // Auto rotate images when project modal is open
   useEffect(() => {

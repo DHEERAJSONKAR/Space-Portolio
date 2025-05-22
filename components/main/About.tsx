@@ -132,7 +132,7 @@ const About = () => {
                 Who I Am
               </h3>
               <p className="text-gray-300">
-                Hi, I'm Dheeraj Sonkar, a passionate Full Stack Developer with expertise in creating innovative web solutions. 
+                Hi, I&apos;m Dheeraj Sonkar, a passionate Full Stack Developer with expertise in creating innovative web solutions. 
                 I specialize in building responsive, user-friendly websites and applications using modern technologies like Html, Css, JavaScript, React, 
                 Next.js, and Node.js, Java Language. I love solving complex problems and continuously learning new skills to enhance my craft.
               </p>
