@@ -159,11 +159,11 @@ const About = () => {
 
             <div className="bg-[#0300145e] border border-[#7042f861] p-6 rounded-xl">
               <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-3 flex items-center">
-                <FaBriefcase className="mr-2" /> training Certificate
+                <FaBriefcase className="mr-2" />Training Certificate
               </h3>
               <div className="mb-4">
                 <h4 className="text-lg font-semibold text-white">Java Language</h4>
-                <p className="text-gray-400">Tech Solutions Inc. • 2022-Present</p>
+                <p className="text-gray-400">St. Andrews Institute Of Technology And Management • 2025</p>
                 <p className="text-gray-300 mt-1">Completed 50-Hours Of Vocational Training In CORE JAVA, OOPS and DSA </p>
               </div>
               <div>
