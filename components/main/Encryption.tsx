@@ -4,13 +4,26 @@ import React from "react";
 import { motion } from "framer-motion";
 import { slideInFromTop } from "@/utils/motion";
 import Image from "next/image";
+import { Variants } from "framer-motion";
+
+const containerVariants = (delay = 0): Variants => ({
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay,
+      duration: 0.5,
+    },
+  },
+});
 
 const Encryption = () => {
   return (
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
-          variants={slideInFromTop} 
+          variants={slideInFromTop}
           className="text-[40px] font-medium text-center text-gray-200"
         >
           Performance
