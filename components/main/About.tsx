@@ -6,7 +6,6 @@ import Image from "next/image";
 import { FaGraduationCap, FaBriefcase, FaRegLightbulb, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/utils/motion";
 import { Skill_data } from "@/constants"; // Import the Skill_data from constants
-import dkphoto from "@/public/dkphoto.jpg"
 import TypewriterText from "@/components/animations/TypewriterText";
 
 const About = () => {
@@ -25,8 +24,8 @@ const About = () => {
     };
   };
 
-  // Use the profile image from constants if available, or fallback to default
-  const profileImage = Skill_data.find(skill => skill.skill_name === "Profile")?.Image || "/profile-photo.png";
+  // Use a direct path to the image to avoid import issues
+  const profileImagePath = "/dkphoto.jpg"; // Update this with your actual image path in the public folder
 
   return (
     <section 
@@ -55,11 +54,12 @@ const About = () => {
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 mb-6 rounded-2xl overflow-hidden border-4 border-purple-500/50 shadow-xl shadow-purple-500/30 group">
               <Image
-                src={dkphoto}
+                src={profileImagePath} // Use the direct path instead of the imported image
                 alt="Dheeraj Sonkar"
                 width={320}
                 height={320}
                 className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                priority // Add priority to ensure it loads quickly
               />
               
               {/* Enhanced animated name with visual effects */}
