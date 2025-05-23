@@ -14,7 +14,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  github?: string;
+  github?: string; // Make sure this is defined as optional with the ? mark
   demo?: string;
   images?: string[]; // Array of additional images for the project
 }
@@ -35,6 +35,7 @@ const Projects = () => {
       description: "A comprehensive coding platform with user authentication and collaborative features for developers.",
       technologies: ["Next.js", "React", "TailwindCSS", "Authentication"],
       demo: "https://kodebase.vercel.app/login",
+      github: "https://github.com/DHEERAJSONKAR/kodebase", // Add GitHub link or use empty string if not available
       images: ["/kodebase1.jpg", "/kodebase2.jpg", "/kodebase3.jpg"]
     },
     {
@@ -44,6 +45,7 @@ const Projects = () => {
       description: "A modern gym and fitness website with membership plans, workout schedules and trainer profiles.",
       technologies: ["React", "CSS", "JavaScript", "Responsive Design"],
       demo: "https://dheeraj-gym.vercel.app/",
+      github: "https://github.com/DHEERAJSONKAR/gym", // Add GitHub link
       images: ["/gym1.jpg", "/gym2.jpg", "/gym3.jpg"]
     },
     {
@@ -53,6 +55,7 @@ const Projects = () => {
       description: "An AI-powered platform offering intelligent solutions for various tasks and queries.",
       technologies: ["AI", "React", "API Integration", "UI/UX"],
       demo: "https://shipra-ai.vercel.app/",
+      github: "https://github.com/DHEERAJSONKAR/shipra-ai", // Add GitHub link
       images: ["/ai1.jpg", "/ai2.jpg", "/ai3.jpg"]
     },
     {
@@ -62,6 +65,7 @@ const Projects = () => {
       description: "A classic Tic-Tac-Toe game built with modern web technologies for an engaging user experience.",
       technologies: ["JavaScript", "HTML", "CSS", "Game Logic"],
       demo: "https://tic-tac-sooty.vercel.app/",
+      github: "https://github.com/DHEERAJSONKAR/tic-tac-toe", // Add GitHub link
       images: ["/tictac1.jpg", "/tictac2.jpg", "/tictac3.jpg"]
     },
     {
@@ -71,6 +75,7 @@ const Projects = () => {
       description: "A comprehensive CRM platform with sales tracking, customer management, and reporting features.",
       technologies: ["React", "CRM", "Dashboard", "Data Visualization"],
       demo: "https://salesfource.vercel.app/",
+      github: "https://github.com/DHEERAJSONKAR/salesfource", // Add GitHub link
       images: ["/sales1.jpg", "/sales2.jpg", "/sales3.jpg"]
     },
     {
@@ -80,6 +85,7 @@ const Projects = () => {
       description: "A collection of interactive card components with innovative hover effects and animations.",
       technologies: ["CSS3", "HTML5", "JavaScript", "Animation"],
       demo: "https://cardhover-flax.vercel.app/",
+      github: "https://github.com/DHEERAJSONKAR/card-hover", // Add GitHub link
       images: ["/card1.jpg", "/card2.jpg", "/card3.jpg"]
     }
   ], []);
@@ -387,7 +393,7 @@ const Projects = () => {
                     </div>
                     
                     <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                      {activeProjectData.github && (
+                      {activeProjectData?.github && ( // Use optional chaining to safely access the property
                         <a 
                           href={activeProjectData.github} 
                           target="_blank" 
@@ -397,7 +403,7 @@ const Projects = () => {
                           <FaGithub className="text-xl" /> View Code
                         </a>
                       )}
-                      {activeProjectData.demo && (
+                      {activeProjectData?.demo && (
                         <a 
                           href={activeProjectData.demo} 
                           target="_blank" 
