@@ -6,7 +6,6 @@ import { slideInFromTop } from "@/utils/motion";
 import Image from "next/image";
 import { Variants } from "framer-motion";
 
-// Fix the type definition by using the correct Variants type
 const containerVariants = (delay = 0): Variants => ({
   hidden: { y: 50, opacity: 0 },
   visible: {
@@ -72,7 +71,7 @@ const Encryption = () => {
           playsInline
           preload="false"
           className="w-full h-auto"
-          src="/encryption.webm"
+          src="/encryption.webm/"
         />
       </div>
     </div>

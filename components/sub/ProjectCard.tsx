@@ -1,13 +1,23 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 interface Props {
   src: string;
   title: string;
   description: string;
+  demoLink?: string; // Add demo link prop
 }
 
-const ProjectCard = ({ src, title, description }: Props) => {
+const ProjectCard = ({ src, title, description, demoLink }: Props) => {
+  // Function to handle direct project opening
+  const handleDirectLink = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Stop event from bubbling up to parent click handlers
+    if (demoLink) {
+      window.open(demoLink, "_blank", "noopener,noreferrer");
+    }
+  };
+
   return (
     <div className="relative h-full group">
       <div className="h-[200px] relative overflow-hidden">
@@ -47,18 +57,31 @@ const ProjectCard = ({ src, title, description }: Props) => {
         </p>
         
         {/* Animated "Click to explore" text */}
-        <div className="mt-3 text-purple-400 text-sm flex items-center">
-          <span className="bg-purple-500 w-2 h-2 rounded-full mr-2 animate-pulse"></span>
-          <span className="relative overflow-hidden">
-            <span className="inline-block transform group-hover:translate-x-0 translate-x-0 transition-transform duration-300">
-              Click to explore
-            </span>
-            <span className="absolute top-0 left-0 w-full h-full flex items-center transform translate-x-full group-hover:translate-x-0 transition-transform duration-300">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                View project →
+        <div className="mt-3 flex items-center justify-between">
+          <div className="text-purple-400 text-sm flex items-center">
+            <span className="bg-purple-500 w-2 h-2 rounded-full mr-2 animate-pulse"></span>
+            <span className="relative overflow-hidden">
+              <span className="inline-block transform group-hover:translate-x-0 translate-x-0 transition-transform duration-300">
+                Click to explore
+              </span>
+              <span className="absolute top-0 left-0 w-full h-full flex items-center transform translate-x-full group-hover:translate-x-0 transition-transform duration-300">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+                  View project →
+                </span>
               </span>
             </span>
-          </span>
+          </div>
+          
+          {/* Direct link button - visible on touch devices */}
+          {demoLink && (
+            <button 
+              onClick={handleDirectLink}
+              className="touch-highlight touch-scale md:hidden bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 text-xs px-2 py-1 rounded-md transition-colors"
+              aria-label="Open project"
+            >
+              Open
+            </button>
+          )}
         </div>
       </div>
     </div>

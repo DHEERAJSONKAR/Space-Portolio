@@ -34,7 +34,7 @@ const Projects = () => {
       title: "KodeBase",
       description: "A comprehensive coding platform with user authentication and collaborative features for developers.",
       technologies: ["Next.js", "React", "TailwindCSS", "Authentication"],
-      demo: "https://kodebase.vercel.app/",
+      demo: "https://kodebase.vercel.app/login",
       images: ["/kodebase1.jpg", "/kodebase2.jpg", "/kodebase3.jpg"]
     },
     {
@@ -202,6 +202,7 @@ const Projects = () => {
         Click on any project to see more details including technologies used.
       </motion.p>
 
+      {/* Update the ProjectCard rendering in the grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-10 max-w-[1400px]">
         {projects.map((project, index) => (
           <motion.div
@@ -218,13 +219,13 @@ const Projects = () => {
             <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg blur opacity-30 group-hover:opacity-70 transition duration-300"></div>
             <div 
               onClick={() => handleProjectClick(project.id)}
-              className="relative cursor-pointer transition-all duration-300 bg-[#0a0a1a] rounded-lg overflow-hidden shadow-lg shadow-purple-500/10 group-hover:shadow-purple-500/40 transform-gpu group-hover:scale-[1.02]"
+              className="relative cursor-pointer transition-all duration-300 bg-[#0a0a1a] rounded-lg overflow-hidden shadow-lg shadow-purple-500/10 group-hover:shadow-purple-500/40 transform-gpu group-hover:scale-[1.02] touch-scale"
             >
               <ProjectCard
                 src={project.src}
                 title={project.title}
                 description={project.description}
-                link={project.demo} // Pass the project's demo URL as the link prop
+                demoLink={project.demo}
               />
             </div>
           </motion.div>
