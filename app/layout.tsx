@@ -5,6 +5,7 @@ import StarsCanvas from "@/components/main/StarBackground";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { FaMobileAlt } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -32,11 +33,13 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
-        <LoadingScreen />
-        <StarsCanvas />
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <LoadingScreen />
+          <StarsCanvas />
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
         
         {/* Mobile orientation notice */}
         <div className="rotate-device-notice">
