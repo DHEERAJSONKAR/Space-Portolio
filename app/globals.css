@@ -356,22 +356,6 @@ html {
   }
 }
 
-/* Mobile orientation animation */
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-slideUp {
-  animation: slideUp 0.5s ease-in-out forwards;
-}
-
 /* Improved scrollbars for desktop */
 ::-webkit-scrollbar {
   width: 6px;
@@ -389,20 +373,4 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #9f75ff, #60a5fa);
-}
-
-/* Additional responsive styles */
-@media (max-width: 640px) {
-  h1, h2, h3 {
-    word-break: break-word;
-  }
-  
-  /* Improve touch targets on mobile */
-  button, a {
-    min-height: 44px;
-    min-width: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
 }

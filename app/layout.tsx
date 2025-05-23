@@ -5,7 +5,7 @@ import StarsCanvas from "@/components/main/StarBackground";
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
-import MobileOrientationNotice from "@/components/MobileOrientationNotice";
+import { FaMobileAlt } from "react-icons/fa";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,13 +19,6 @@ export const metadata: Metadata = {
     apple: [
       { url: "/dkphoto.jpg" },
     ],
-  },
-  // Add viewport configuration for better mobile handling
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
   },
 };
 
@@ -42,13 +35,14 @@ export default function RootLayout({
         <LoadingScreen />
         <StarsCanvas />
         <Navbar />
-        <main className="flex flex-col min-h-screen">
-          {children}
-        </main>
+        {children}
         <Footer />
         
-        {/* Client component for mobile orientation detection */}
-        <MobileOrientationNotice />
+        {/* Mobile orientation notice */}
+        <div className="rotate-device-notice">
+          <FaMobileAlt className="mr-2 animate-pulse" />
+          <span>Rotate your device for better experience</span>
+        </div>
       </body>
     </html>
   );
