@@ -26,14 +26,14 @@ export const slideInFromRight = (delay: number) => {
   };
 };
 
-export const slideInFromTop = (delay?: number) => {
+export const slideInFromTop = (delay: number = 0.3) => {
   return {
     hidden: { y: -100, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        delay: delay || 0.3,
+        delay: delay,
         duration: 0.5,
       },
     },

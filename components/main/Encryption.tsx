@@ -23,7 +23,7 @@ const Encryption = () => {
     <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
       <div className="absolute w-auto h-auto top-0 z-[5]">
         <motion.div
-          variants={slideInFromTop}
+          variants={slideInFromTop(0.3)} // Pass a number argument to match the expected type
           className="text-[40px] font-medium text-center text-gray-200"
         >
           Performance
