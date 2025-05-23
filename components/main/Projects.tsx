@@ -34,7 +34,7 @@ const Projects = () => {
       title: "KodeBase",
       description: "A comprehensive coding platform with user authentication and collaborative features for developers.",
       technologies: ["Next.js", "React", "TailwindCSS", "Authentication"],
-      demo: "https://kodebase.vercel.app/login",
+      demo: "https://kodebase.vercel.app/",
       images: ["/kodebase1.jpg", "/kodebase2.jpg", "/kodebase3.jpg"]
     },
     {
@@ -224,6 +224,7 @@ const Projects = () => {
                 src={project.src}
                 title={project.title}
                 description={project.description}
+                link={project.demo} // Pass the project's demo URL as the link prop
               />
             </div>
           </motion.div>
