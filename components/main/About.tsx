@@ -9,20 +9,18 @@ import { Skill_data } from "@/constants"; // Import the Skill_data from constant
 import TypewriterText from "@/components/animations/TypewriterText";
 
 const About = () => {
-  // Define slideInFromBottom locally
-  const slideInFromBottom = (delay: number) => {
-    return {
-      hidden: { y: 100, opacity: 0 },
-      visible: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          delay: delay,
-          duration: 0.5,
-        },
+  // Define slideInFromBottom locally and properly implement Variants
+  const slideInFromBottom = (delay: number): Variants => ({
+    hidden: { y: 100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: delay,
+        duration: 0.5,
       },
-    };
-  };
+    },
+  });
 
   // Use a direct path to the image to avoid import issues
   const profileImagePath = "/dkphoto.jpg"; // Update this with your actual image path in the public folder
